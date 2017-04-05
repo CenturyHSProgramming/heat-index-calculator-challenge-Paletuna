@@ -1,7 +1,8 @@
-# WindchillCalculator.py
-# Your job is to write a function in BMICalculator.py (call
-# it **calculateWindchill()** that calculates the windchill # factor based on the New Wind Chill Index from 
-# Calculator.net (http://www.calculator.net/wind-chill-calculator.html)
+# HeatIndexCalculator.py
+# Your job is to write a function in HeatIndexCalculator.py (call
+# it **calculateHeatIndex()** that calculates the heat index
+# factor based on the Heat Index Calculator from
+# Calculator.net (http://www.calculator.net/heat-index-calculator.html)
 
 # Define Function below
 # be sure to return an integer

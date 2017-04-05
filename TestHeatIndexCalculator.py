@@ -16,51 +16,56 @@ class KnownValues(unittest.TestCase):
     # Formula for unittest method is:
     # test_functionName_testDescription
 
-    def test_calculateHeatIndex_forLowWind_WarmTemp(self):
+    def test_calculateHeatIndex_forLowRelativeHumidity_WarmTemp(self):
         # Capture the results of the function
-        result = HeatIndexCalculator.calculateHeatIndex(5, 40)
+        result = HeatIndexCalculator.calculateHeatIndex(40, 80)
         # Check for expected output
-        self.assertEqual(36, result)
+        self.assertEqual(80, result)
 
-    def test_calculateHeatIndex_forLowWind_LowTemp(self):
-        result = HeatIndexCalculator.calculateHeatIndex(5, 0)
-        expected = -11
+    def test_calculateHeatIndex_forLowRelativeHumidity_HotTemp(self):
+        result = HeatIndexCalculator.calculateHeatIndex(40, 92)
+        expected = 94
         self.assertEqual(expected, result)
 
     # Add minimum of 5 more unittests
-    def test_calculateHeatIndex_forLowWind_ExtremeLowTemp(self):
-        result = HeatIndexCalculator.calculateHeatIndex(5, -45)
-        expected = -63
+    def test_calculateHeatIndex_forLowRelativeHumidity_ExtremeHotTemp(self):
+        result = HeatIndexCalculator.calculateHeatIndex(45, 108)
+        expected = 137
         self.assertEqual(expected, result)
 
-    def test_calculateHeatIndex_forMedWind_WarmTemp(self):
-        result = HeatIndexCalculator.calculateHeatIndex(35, 40)
-        expected = 28
+    def test_calculateHeatIndex_forMedRelativeHumidity_WarmTemp(self):
+        result = HeatIndexCalculator.calculateHeatIndex(65, 80)
+        expected = 82
         self.assertEqual(expected, result)
 
-    def test_calculateHeatIndex_forMedWind_LowTemp(self):
-        result = HeatIndexCalculator.calculateHeatIndex(40, 0)
-        expected = -29
+    def test_calculateHeatIndex_forMedRelativeHumidity_HotTemp(self):
+        result = HeatIndexCalculator.calculateHeatIndex(65, 90)
+        expected = 103
         self.assertEqual(expected, result)
 
-    def test_calculateHeatIndex_forMedWind_ExtremeTemp(self):
-        result = HeatIndexCalculator.calculateHeatIndex(45, -45)
-        expected = -93
+    def test_calculateHeatIndex_forMedRelativeHumidity_ExtremeTemp(self):
+        result = HeatIndexCalculator.calculateHeatIndex(60, 100)
+        expected = 129
         self.assertEqual(expected, result)
 
-    def test_calculateHeatIndex_forHighWind_WarmTemp(self):
-        result = HeatIndexCalculator.calculateHeatIndex(60, 35)
-        expected = 17
+    def test_calculateHeatIndex_forHighRelativeHumidity_WarmTemp(self):
+        result = HeatIndexCalculator.calculateHeatIndex(95, 80)
+        expected = 86
         self.assertEqual(expected, result)
 
-    def test_calculateHeatIndex_forHighWind_LowTemp(self):
-        result = HeatIndexCalculator.calculateHeatIndex(55, -5)
-        expected = -39
+    def test_calculateHeatIndex_forHighRelativeHumidity_HotTemp(self):
+        result = HeatIndexCalculator.calculateHeatIndex(100, 90)
+        expected = 132
         self.assertEqual(expected, result)
 
-    def test_calculateHeatIndex_forHighWind_ExtremeTemp(self):
-        result = HeatIndexCalculator.calculateHeatIndex(55, -40)
-        expected = -97
+    def test_calculateHeatIndex_for_80RelativeHumidity_96Temp(self):
+        result = HeatIndexCalculator.calculateHeatIndex(80, 96)
+        expected = 132
+        self.assertEqual(expected, result)
+        
+    def test_calculateHeatIndex_for_70RelativeHumidity_98Temp(self):
+        result = HeatIndexCalculator.calculateHeatIndex(80, 96)
+        expected = 134
         self.assertEqual(expected, result)
 
 
