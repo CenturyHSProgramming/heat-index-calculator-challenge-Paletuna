@@ -1,5 +1,5 @@
 # HeatIndexCalculator.py
-A Python 3 Math challenge using unit tests.
+A Python 3 Math challenge using unit tests. Write a python function that calculates the heat index calculator based on air temperature and relative humidity. Based on Heat Index Calculator (http://www.calculator.net/heat-index-calculator.html)
 
 **Inputs:**
 ----------
