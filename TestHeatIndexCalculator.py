@@ -56,13 +56,13 @@ class KnownValues(unittest.TestCase):
         expected = 132
         self.assertEqual(expected, result)
 
-    def test_calculateHeatIndex_for_80RelativeHumidity_96Temp(self):
-        result = HeatIndexCalculator.calculateHeatIndex(80, 96)
-        expected = 132
+    def test_calculateHeatIndex_for_80RelativeHumidity_94Temp(self):
+        result = HeatIndexCalculator.calculateHeatIndex(80, 94)
+        expected = 129
         self.assertEqual(expected, result)
         
     def test_calculateHeatIndex_for_70RelativeHumidity_98Temp(self):
-        result = HeatIndexCalculator.calculateHeatIndex(80, 96)
+        result = HeatIndexCalculator.calculateHeatIndex(70, 98)
         expected = 134
         self.assertEqual(expected, result)
 
